@@ -1,0 +1,45 @@
+<script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var mobile=document.myform.mob.value;  
+var email=document.myform.em.value;   
+ 
+if (name=="" || name.length<3){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(mobile.length!=10){  
+  alert("Mobile number must be 10 digit.");  
+  return false;  
+  } 
+else if(email==null || email==""){  
+  alert("Form can't be blank");  
+  return false;  
+  } 
+
+document.getElementById('p6').innerHTML=name;   
+document.getElementById('p7').innerHTML=mobile;    
+document.getElementById('p8').innerHTML=email;  
+
+ 
+}  
+</script>  
+<body>  
+<form name="myform" method="post"  onsubmit="return validateform()" > 
+<div>
+<table> 
+<tr>
+<th>
+Name: </th><td><input type="text" name="name"></td></tr>  
+<tr>
+<th>Mob No:</th><td> <input type="text" name="mob"></td></tr>
+<tr>
+<th>email :</th><td> <input type="email" name="em"></td></tr>
+
+</table>
+<input type="submit" value="register">  
+<hr>
+</div>
+<span id="p6"></span><br>    
+<span id="p7"></span>
+<span id="p8"></span>
+</form>
